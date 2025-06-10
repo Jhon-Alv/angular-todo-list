@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 1.5rem 4rem;
+
+}
+
+.title {
+    font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.0125em;
+    line-height: 2.5rem;
+}
+
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 4rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .add-button {
+        width: auto;
+        font-size: 1rem;
+        padding: 0.5rem 0;
+    }
+}
