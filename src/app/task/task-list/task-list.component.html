@@ -1,18 +1,33 @@
 <div class="container">
     <div class="task-box pendiente">
-        <app-task-card/>
-        <app-task-card/>
-        <app-task-card/>
-        <app-task-card/>
-        <app-task-card/>
-        <app-task-card/>
+        <h2>Pendiente</h2>
         
+        @for (task of taskList; track task.id) {
+
+            @if(task.state === "pendiente") {
+                <app-task-card [task]="task"/>
+            }
+            
+        }
     </div>
     <div class="task-box progreso">
-        <app-task-card/>
+        <h2>Progreso</h2>
+        @for (task of taskList; track task.id) {
+        
+            @if(task.state === "progreso") {
+                <app-task-card [task]="task"/>
+            }
+        }
     </div>
     <div class="task-box completado">
-        <app-task-card/>
+        <h2>Completado</h2>
+        @for (task of taskList; track task.id) {
+
+            @if(task.state === "completado") {
+                <app-task-card [task]="task"/>
+            }
+            
+        }
     </div>
     
 </div>

@@ -5,13 +5,13 @@
     flex-wrap: wrap;
     align-items: start;
     justify-content: space-around;
-    gap: 2rem;
+    
 
 }
 
 .task-box {
     border-radius: 1rem;
-    min-width: min-content;
+    min-width: 20rem;
     min-height: 80vh;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     margin: 1rem; /* Sombra suave */
@@ -31,17 +31,39 @@
     }
 }
 
+h2 {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
 .pendiente {
     border: 2px #fcedc9 solid;
     background-color: #fef8ea;
+
+    h2{
+        color: #421506;
+    }
+
 }
 
 .progreso {
     border: 2px #eceafd solid;
     background-color: #f1f0fe;
+
+    h2{
+        color: #281461;
+    }
 }
 
 .completado {
     border: 2px #fbeef7 solid;
     background-color: #fcf3f9;
+
+    h2{
+        color: #490e2d;
+    }
 }
+
