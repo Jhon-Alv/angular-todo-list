@@ -1,34 +1,59 @@
 .task-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin: 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  transition: box-shadow 0.2s;
+  width: 20rem; /* Fixed width for task cards */
+  min-height: 8rem; /* Ensures cards stretch to fill available height */
+
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .info {
     display: flex;
     flex-direction: column;
-    transition: box-shadow 0.2s;
-    width: 20rem;/* Fixed width for task cards */
-    min-height: 8rem; /* Ensures cards stretch to fill available height */
-
-    &:hover {
-        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    }
+    width: 20rem;
 
     .task-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #333;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #333;
     }
 
     .task-description {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
     }
 
     .task-card-footer {
-        padding: 0 1rem;
-        font-size: 0.8rem;
+      padding: 0 1rem;
+      font-size: 0.8rem;
     }
+  }
 
+  .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+
+    button {
+      background: none;
+      color: #464646;
+      font-size: 1.2rem;
+      transition: color 0.2s;
+      box-shadow: #333 0 0 0.1rem;
+
+      &:hover {
+        color: #292929;
+      }
+    }
+  }
 }

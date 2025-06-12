@@ -1,11 +1,21 @@
 <mat-card class="task-card" appearance="outlined">
-  <mat-card-header class="task-header">
-    <mat-card-title class="task-title">{{ task?.title }}</mat-card-title>
-  </mat-card-header>
-  <mat-card-content class="task-description">
-    <p>{{ task?.description }}</p>
-  </mat-card-content>
-  <mat-card-footer class="task-card-footer">
-    <p>{{ task?.created_date | date: 'dd/MM/yyyy HH:mm' }}</p>
-  </mat-card-footer>
+  <div class="info">
+    <mat-card-header class="task-header">
+      <mat-card-title class="task-title">{{ task?.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="task-description">
+      <p>{{ task?.description }}</p>
+    </mat-card-content>
+    <mat-card-footer class="task-card-footer">
+      <p>{{ task?.created_date | date : "dd/MM/yyyy HH:mm" }}</p>
+    </mat-card-footer>
+  </div>
+  <div class="actions">
+    <button mat-mini-fab color="primary" class="edit-button" (click)="editTask()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-mini-fab color="warn" class="delete-button" (click)="deleteTask()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
 </mat-card>
