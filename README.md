@@ -1,27 +1,112 @@
-# TodolistAngular
+Of course, here is a README.md file for your GitHub repository.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+# Angular Todo List Application
 
-## Development server
+A simple and clean Todo List application built with Angular that demonstrates full CRUD (Create, Read, Update, Delete) functionality. This project connects to a REST API to manage tasks, providing a seamless and interactive user experience.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+-----
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  - **Create, Read, Update, and Delete (CRUD) tasks:** Easily manage your to-do items.
+  - **Modern UI:** A clean and intuitive interface for a great user experience.
+  - **HTTP Client:** Utilizes Angular's `HttpClient` module to interact with a REST API.
+  - **Reactive Forms:** Employs reactive forms for robust and scalable user input handling.
+  - **Component-Based Architecture:** Built with a modular and maintainable component structure.
 
-## Build
+-----
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Prerequisites
 
-## Running unit tests
+Before you begin, ensure you have the following installed on your system:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  - [Node.js](https://nodejs.org/) (which includes npm)
+  - [Angular CLI](https://angular.io/cli)
+  - A running instance of the corresponding [REST API](https://www.google.com/search?q=%23rest-api) for the backend.
 
-## Running end-to-end tests
+-----
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Installation
 
-## Further help
+1.  **Clone the repository:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    ```sh
+    git clone https://github.com/your-username/your-repository-name.git
+    cd your-repository-name
+    ```
+
+2.  **Install dependencies:**
+
+    ```sh
+    npm install
+    ```
+
+3.  **Configure the API endpoint:**
+    Open `src/environments/environment.ts` and update the `apiUrl` to point to your backend server.
+
+    ```typescript
+    export const environment = {
+      production: false,
+      apiUrl: 'http://localhost:3000/tasks' // Or your API endpoint
+    };
+    ```
+
+4.  **Run the development server:**
+
+    ```sh
+    ng serve
+    ```
+
+    Navigate to `http://localhost:4200/` in your browser. The application will automatically reload if you change any of the source files.
+
+-----
+
+## Functionality
+
+### View Tasks
+
+On the main screen, you will see a list of all your current tasks.
+
+### Add a Task
+
+1.  Enter the task description in the input field at the top.
+2.  Click the "Add Task" button.
+3.  Your new task will appear in the list.
+
+### Edit a Task
+
+1.  Click the "Edit" button next to the task you want to modify.
+2.  The task will become an editable field.
+3.  Make your changes and click the "Save" button.
+
+### Mark a Task as Complete
+
+  - Click the checkbox next to a task to toggle its completed status.
+
+### Delete a Task
+
+  - Click the "Delete" button next to a task to permanently remove it from the list.
+
+-----
+
+## Technologies Used
+
+  - **Angular:** The core framework for building the application.
+  - **TypeScript:** The primary language used for development.
+  - **HTML & CSS:** For structuring and styling the user interface.
+  - **Angular CLI:** For project generation and management.
+
+-----
+
+## REST API Integration
+
+This application is designed to work with a RESTful API that supports the following endpoints for task management:
+
+| Operation | HTTP Method | Endpoint | Description |
+| :--- | :--- | :--- | :--- |
+| **Read** | `GET` | `/tasks` | Retrieves all tasks. |
+| **Create** | `POST` | `/tasks` | Adds a new task. |
+| **Update** | `PUT` | `/tasks/:id` | Updates an existing task. |
+| **Delete** | `DELETE` | `/tasks/:id` | Deletes a specific task. |
+
+Ensure your backend server is running and accessible from the Angular application. You will need to implement a backend that provides these endpoints.
