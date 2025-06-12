@@ -2,30 +2,39 @@
     <div class="task-box pendiente">
         <h2>Pendiente</h2>
         
-        @for (task of taskList; track task.id) {
-
-            @if(task.state === "pendiente") {
-                <app-task-card [task]="task"/>
-            }
-            
+        @if(pendienteTaskList.length === 0) {
+            <p>No hay tareas pendientes</p>
         }
+
+        @for (task of pendienteTaskList; track task.id) {
+
+            <app-task-card [task]="task"/>
+
+        }   
     </div>
     <div class="task-box progreso">
         <h2>Progreso</h2>
-        @for (task of taskList; track task.id) {
+
+        @if(progresoTaskList.length === 0) {
+            <p>No hay tareas en progreso</p>
+        }
+
+        @for (task of progresoTaskList; track task.id) {
         
-            @if(task.state === "progreso") {
-                <app-task-card [task]="task"/>
-            }
+            <app-task-card [task]="task"/>
+
         }
     </div>
     <div class="task-box completado">
         <h2>Completado</h2>
-        @for (task of taskList; track task.id) {
 
-            @if(task.state === "completado") {
-                <app-task-card [task]="task"/>
-            }
+        @if(completoTaskList.length === 0) {
+            <p>No hay tareas completados</p>
+        }
+        
+        @for (task of completoTaskList; track task.id) {
+
+            <app-task-card [task]="task"/>
             
         }
     </div>

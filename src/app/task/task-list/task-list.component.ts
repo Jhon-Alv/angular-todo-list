@@ -11,7 +11,9 @@ import { TasksService } from '../../services/tasks.service';
 })
 export class TaskListComponent {
 
-  public taskList: Task[] = [];
+  public pendienteTaskList: Task[] = [];
+  public progresoTaskList: Task[] = [];
+  public completoTaskList: Task[] = [];
 
   public _taskService: TasksService = inject(TasksService);
 
@@ -20,9 +22,22 @@ export class TaskListComponent {
     this._taskService.getTasks().subscribe({
       next: (tasks) => {
 
-        this.taskList = tasks;
-        console.log(this.taskList);
-                
+        tasks.filter(task => task.state === State.pendiente).forEach(task => {
+          this.pendienteTaskList.push(task);
+        });
+
+        tasks.filter(task => task.state === State.progreso).forEach(task => {
+          this.progresoTaskList.push(task);
+        });
+
+        tasks.filter(task => task.state === State.completado).forEach(task => {
+          this.completoTaskList.push(task);
+        });
+
+        console.log(this.pendienteTaskList);
+        console.log(this.progresoTaskList);
+        console.log(this.completoTaskList);
+
       },
       error: (err) => {
         console.error('Error fetching tasks:', err);
