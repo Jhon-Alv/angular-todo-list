@@ -46,7 +46,6 @@ Before you begin, ensure you have the following installed on your system:
 
     ```typescript
     export const environment = {
-      production: false,
       apiUrl: 'http://localhost:3000/tasks' // Or your API endpoint
     };
     ```
@@ -67,31 +66,12 @@ Before you begin, ensure you have the following installed on your system:
 
 On the main screen, you will see a list of all your current tasks.
 
-### Add a Task
-
-1.  Enter the task description in the input field at the top.
-2.  Click the "Add Task" button.
-3.  Your new task will appear in the list.
-
-### Edit a Task
-
-1.  Click the "Edit" button next to the task you want to modify.
-2.  The task will become an editable field.
-3.  Make your changes and click the "Save" button.
-
-### Mark a Task as Complete
-
-  - Click the checkbox next to a task to toggle its completed status.
-
-### Delete a Task
-
-  - Click the "Delete" button next to a task to permanently remove it from the list.
-
 -----
 
 ## Technologies Used
 
   - **Angular:** The core framework for building the application.
+  - **Angular Material:**  UI component library that follows the principles of Material Design.
   - **TypeScript:** The primary language used for development.
   - **HTML & CSS:** For structuring and styling the user interface.
   - **Angular CLI:** For project generation and management.
