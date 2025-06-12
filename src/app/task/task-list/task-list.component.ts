@@ -34,10 +34,6 @@ export class TaskListComponent {
           this.completoTaskList.push(task);
         });
 
-        console.log(this.pendienteTaskList);
-        console.log(this.progresoTaskList);
-        console.log(this.completoTaskList);
-
       },
       error: (err) => {
         console.error('Error fetching tasks:', err);

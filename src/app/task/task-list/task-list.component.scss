@@ -27,7 +27,8 @@
     font-size: 1rem;
     color: #666;
     margin: 0.5rem 0;
-    width: 20rem;
+    min-width: 20rem;
+    width: 22rem;
     height: 4rem;
   }
 
@@ -42,8 +43,8 @@
 
   .task-box {
     margin: 1rem auto; /* Centra los elementos en pantallas pequeñas */
-    width: 22.5rem; /* Hace que los elementos ocupen todo el ancho en pantallas pequeñas */
-    min-height: auto; /* Ajuste en altura para mejor adaptación */
+    width: auto; /* Hace que los elementos ocupen todo el ancho en pantallas pequeñas */
+    min-height: 20rem; /* Ajuste en altura para mejor adaptación */
   }
 }
 
