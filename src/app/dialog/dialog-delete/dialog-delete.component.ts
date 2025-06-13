@@ -17,11 +17,9 @@ export class DialogDeleteComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: {
       taskId: number,
-      deleteTask: () => void;
+      refreshTask: () => void;
     }
-  ) {
-
-  }
+  ) {}
 
 
   deleteTask(): void {
@@ -32,7 +30,7 @@ export class DialogDeleteComponent {
     this._taskService.deleteTask(taskId).subscribe({
       next: () => {
         console.log('Task deleted successfully');
-        this.data.deleteTask();
+        this.data.refreshTask();
         this._dialogRef.close();
       },
       error: (error) => {

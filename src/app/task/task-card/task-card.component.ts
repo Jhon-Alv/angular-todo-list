@@ -6,6 +6,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatButtonModule, MatMiniFabButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogDeleteComponent } from '../../dialog/dialog-delete/dialog-delete.component';
+import { DialogEditComponent } from '../../dialog/dialog-edit/dialog-edit.component';
 
 @Component({
   selector: 'app-task-card',
@@ -19,11 +20,21 @@ export class TaskCardComponent {
   readonly _dialogRef = inject(MatDialog);
 
   @Input() task?: Task;
-  @Output() taskDeleted = new EventEmitter<void>();
+  @Output() refreshTask = new EventEmitter<void>();
 
-  editTask() {
-    console.log('Edit task with id:', this.task?.id);
-    // Logic to edit the task goes here
+  openEditDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    if(!this.task) return;
+
+    this._dialogRef.open(DialogEditComponent, {
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: {
+        task: this.task,
+        refreshTask: () => {
+          this.refreshTask.emit();
+        }
+      }
+    });
   }
 
   openDeleteDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
@@ -34,8 +45,8 @@ export class TaskCardComponent {
       exitAnimationDuration,
       data: {
         taskId: this.task.id,
-        deleteTask: () => {
-          this.taskDeleted.emit();
+        refreshTask: () => {
+          this.refreshTask.emit();
         }
       }
     });

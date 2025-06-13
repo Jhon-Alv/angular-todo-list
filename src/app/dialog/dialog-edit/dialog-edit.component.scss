@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border-radius: 2rem;
+}
+
+.form-card {
+  margin: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 50vh;
+}
+
+.input-field {
+  min-width: fit-content;
+  margin: 0 2rem;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin: 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .form-card {
+    margin: 0 0.5rem;
+    min-width: 80vw;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .input-field {
+    margin: 0 0.5rem;
+  }
+
+  .button-group {
+    margin: 1rem 0 0 0;
+    justify-content: center;
+  }
+}
+

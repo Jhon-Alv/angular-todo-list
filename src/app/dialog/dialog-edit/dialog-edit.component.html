@@ -1,1 +1,38 @@
-<p>dialog-edit works!</p>
+<div class="container">
+  <form class="form-card" [formGroup]="taskForm" (ngSubmit)="editTask()">
+    
+      <mat-card-header>
+        <mat-card-title>Editar tarea</mat-card-title>
+      </mat-card-header>
+      <mat-form-field class="input-field">
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="title"/>
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Descripción</mat-label>
+        <textarea
+          matInput
+          placeholder="Ejm: Realizar ajustes a la base de datos"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+      <mat-form-field class="input-field">
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="state">
+          <mat-option value="pendiente">Pendiente</mat-option>
+          <mat-option value="progreso">Progreso</mat-option>
+          <mat-option value="completado">Completado</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="button-group">
+        <mat-card-actions class="cancel-button">
+          <button routerLink="tasks" class="cancel-text" mat-button mat-dialog-close>
+            Cancelar
+          </button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <button type="submit" [disabled]="!taskForm.valid" mat-button mat-dialog-close cdkFocusInitial>Editar</button>
+        </mat-card-actions>
+      </div>
+  </form>
+</div>
