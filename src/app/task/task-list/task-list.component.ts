@@ -22,6 +22,11 @@ export class TaskListComponent {
     this._taskService.getTasks().subscribe({
       next: (tasks) => {
 
+        this.pendienteTaskList = tasks.filter(task => task.state === State.pendiente);
+        this.progresoTaskList = tasks.filter(task => task.state === State.progreso);
+        this.completoTaskList = tasks.filter(task => task.state === State.completado);
+
+        /*
         tasks.filter(task => task.state === State.pendiente).forEach(task => {
           this.pendienteTaskList.push(task);
         });
@@ -33,6 +38,7 @@ export class TaskListComponent {
         tasks.filter(task => task.state === State.completado).forEach(task => {
           this.completoTaskList.push(task);
         });
+        */
 
       },
       error: (err) => {
@@ -40,6 +46,20 @@ export class TaskListComponent {
       }
     });
 
+  }
+
+  refreshTaskList() {
+    this._taskService.getTasks().subscribe({
+      next: (tasks) => {
+        this.pendienteTaskList = tasks.filter(task => task.state === State.pendiente);
+        this.progresoTaskList = tasks.filter(task => task.state === State.progreso);
+        this.completoTaskList = tasks.filter(task => task.state === State.completado);
+      },
+      error: (err) => {
+        console.error('Error refreshing task list:', err);
+      }
+    }
+    );
   }
 
 }

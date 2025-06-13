@@ -21,7 +21,10 @@
 
         @for (task of progresoTaskList; track task.id) {
         
-            <app-task-card [task]="task"/>
+            <app-task-card 
+            [task]="task"
+            (taskDeleted)="refreshTaskList()"
+            />
 
         }
     </div>
