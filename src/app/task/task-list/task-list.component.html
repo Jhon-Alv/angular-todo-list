@@ -8,7 +8,10 @@
 
         @for (task of pendienteTaskList; track task.id) {
 
-            <app-task-card [task]="task"/>
+            <app-task-card 
+            [task]="task"
+            (taskDeleted)="refreshTaskList()"
+            />
 
         }   
     </div>
@@ -37,7 +40,10 @@
         
         @for (task of completoTaskList; track task.id) {
 
-            <app-task-card [task]="task"/>
+            <app-task-card 
+            [task]="task"
+            (taskDeleted)="refreshTaskList()"
+            />
             
         }
     </div>
