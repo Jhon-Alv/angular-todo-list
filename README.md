@@ -1,92 +1,102 @@
-Of course, here is a README.md file for your GitHub repository.
+# Aplicación de Lista de Tareas en Angular
 
-# Angular Todo List Application
-
-A simple and clean Todo List application built with Angular that demonstrates full CRUD (Create, Read, Update, Delete) functionality. This project connects to a REST API to manage tasks, providing a seamless and interactive user experience.
+Una aplicación sencilla y limpia de lista de tareas (To-Do) desarrollada con Angular que demuestra funcionalidades CRUD (Crear, Leer, Actualizar, Eliminar). Este proyecto se conecta a una API REST para gestionar tareas, proporcionando una experiencia de usuario interactiva y fluida.
 
 -----
 
 ## Features
 
-  - **Create, Read, Update, and Delete (CRUD) tasks:** Easily manage your to-do items.
-  - **Modern UI:** A clean and intuitive interface for a great user experience.
-  - **HTTP Client:** Utilizes Angular's `HttpClient` module to interact with a REST API.
-  - **Reactive Forms:** Employs reactive forms for robust and scalable user input handling.
-  - **Component-Based Architecture:** Built with a modular and maintainable component structure.
+  - **CRUD de tareas:** Easily manage your to-do items.
+    * **Ver tareas**: Lista todas las tareas existentes.
+    * **Crear tareas**: Añade nuevas tareas.
+    * **Editar tareas**: Modifica tareas existentes.
+    * **Eliminar tareas**: Borra tareas completadas o no deseadas.
+  - **Interfaz moderna:** Diseño intuitivo y fácil de usar.
+  - **Conexión a API REST:** Usa `HttpClient` para interactuar con el backend.
+  - **Formularios reactivos:** Validación robusta y manejo de entradas.
+  - **Arquitectura modular:** Componentes reutilizables y mantenibles.
 
 -----
 
-## Prerequisites
+## Requisitos previos
 
-Before you begin, ensure you have the following installed on your system:
+Asegúrate de tener instalado:
 
-  - [Node.js](https://nodejs.org/) (which includes npm)
+  - [Node.js](https://nodejs.org/) (incluye npm)
   - [Angular CLI](https://angular.io/cli)
-  - A running instance of the corresponding [REST API](https://www.google.com/search?q=%23rest-api) for the backend.
+  - Una API REST funcionando [REST API](https://www.google.com/search?q=%23rest-api) (puedes usar JSON Server para pruebas locales)
 
 -----
 
-## Installation
+## Instalación
 
-1.  **Clone the repository:**
+1.  **Clona el repositorio:**
 
     ```sh
-    git clone https://github.com/your-username/your-repository-name.git
-    cd your-repository-name
+    git clone https://github.com/your-username/Jhon-Alv/angular-todo-list
+    cd angular-todo-list
     ```
 
-2.  **Install dependencies:**
+2.  **Instala las dependencias:**
 
     ```sh
     npm install
     ```
 
-3.  **Configure the API endpoint:**
-    Open `src/environments/environment.ts` and update the `apiUrl` to point to your backend server.
+3.  **Configura la API:**
+    Edita src/environments/environment.ts y define la URL de tu API:
 
     ```typescript
     export const environment = {
-      apiUrl: 'http://localhost:3000/tasks' // Or your API endpoint
+      apiUrl: 'http://localhost:3000/tasks' // Ejemplo para JSON Server
     };
     ```
 
-4.  **Run the development server:**
+4.  **Inicia la aplicación:**
 
     ```sh
     ng serve
     ```
 
-    Navigate to `http://localhost:4200/` in your browser. The application will automatically reload if you change any of the source files.
+    Abre tu navegador en `http://localhost:4200`.
 
 -----
 
-## Functionality
+## Funcionalidades detalladas
 
-### View Tasks
+### Ver tareas
+* Muestra una lista de todas las tareas almacenadas.
+* Filtrado por estado (completadas/pendientes).
 
-On the main screen, you will see a list of all your current tasks.
+### Crear tareas
+* Formulario con validación para añadir nuevas tareas.
+* Campos: Título, Descripción y Estado.
+### Editar tareas
+* Permite modificar título, descripción y estado de una tarea.
+* Guarda los cambios en la API.
+### Crear tareas
+* Elimina tareas individuales con confirmación.
+* Opción de borrar múltiples tareas seleccionadas.
+-----
+
+## Tecnologías utilizadas
+
+  - **Angular:** Framework principal.
+  - **Angular Material:**   Componentes UI con Material Design.
+  - **TypeScript:** Lenguaje de desarrollo.
+  - **HTML & CSS:** Estructura y estilos.
+  - **Angular CLI:** Para la generación y gestión de proyectos.
 
 -----
 
-## Technologies Used
+## Integración con API REST
 
-  - **Angular:** The core framework for building the application.
-  - **Angular Material:**  UI component library that follows the principles of Material Design.
-  - **TypeScript:** The primary language used for development.
-  - **HTML & CSS:** For structuring and styling the user interface.
-  - **Angular CLI:** For project generation and management.
+La aplicación consume una API con los siguientes endpoints:
 
------
-
-## REST API Integration
-
-This application is designed to work with a RESTful API that supports the following endpoints for task management:
-
-| Operation | HTTP Method | Endpoint | Description |
+| Operación | Método HTTP | Endpoint | Descripción |
 | :--- | :--- | :--- | :--- |
-| **Read** | `GET` | `/tasks` | Retrieves all tasks. |
-| **Create** | `POST` | `/tasks` | Adds a new task. |
-| **Update** | `PUT` | `/tasks/:id` | Updates an existing task. |
-| **Delete** | `DELETE` | `/tasks/:id` | Deletes a specific task. |
+| **Leer** | `GET` | `/tasks` | Obtiene todas las tareas. |
+| **Crear** | `POST` | `/tasks` | Añade una nueva tarea. |
+| **Actualizar** | `PUT` | `/tasks/:id` | Modifica una tarea. |
+| **Eliminar** | `DELETE` | `/tasks/:id` | Borra una tarea. |
 
-Ensure your backend server is running and accessible from the Angular application. You will need to implement a backend that provides these endpoints.
